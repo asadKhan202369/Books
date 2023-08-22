@@ -1,0 +1,261 @@
+#post{
+    width: 70%;
+    /* height: 100vh; */
+    padding-bottom: 5vh;
+    background-color: #fff;
+}
+#main{
+    display: flex;
+    padding-top: 15vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f8f3;
+}
+#ch{
+    width: initial !important;
+    padding: 10px !important;
+    border-radius: 50%;
+}
+#frm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#post .head{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: 15vh;
+    padding-left: 2vmax;
+    padding-top: 3vh;
+    border-bottom: 1px solid #ada9a9;
+}
+#post .head h1{
+    font-family: roobert;
+    font-size: 1.1vmax;
+    line-height: 1;
+    font-weight: 500;
+}
+#post .head a{
+    text-decoration: none;
+    font-family: roobert;
+    line-height: 1;
+    font-size: 1vmax;
+    font-weight: 500;
+}
+#post .head h1 span{
+    font-weight: 600;
+}
+
+form .opt{
+    display: flex;
+    align-items: center;
+    gap: 1vmax;
+}
+.photo{
+    display: flex;align-items: center;background-color: #f1f0ef;width: 30vw;height: 8vh;border-radius: 8px;justify-content: center;
+    gap: 1vmax;
+    margin-top: 1vmax;
+}
+.photo a{
+    text-decoration: none;
+    font-family: roobert;
+    color: #111;
+}
+.photo i{
+    font-size: 2vmax;
+}
+form .frow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+form .frow input{
+    width: 30vw !important;
+}
+form .frow select{
+    width: 30vw !important;
+}
+.images{
+    display: flex;
+    align-items: center;
+    gap: 1vmax;
+}
+form small{
+    font-family: roobert;
+    font-size: 1vmax;
+    font-weight: 500;
+}
+.opt{
+    display: flex;
+    align-items:center ;
+}
+
+.book_detailss{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border-bottom: 1px solid #ada9a9;
+    /* background-color: red; */
+}
+.lbd{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+     padding-left: 2vmax;  
+     gap: 2.6vmax;  
+ }
+ 
+ .lbr{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:.5vmax;
+    width: 50%;
+ }
+ .prising_details{
+    padding-bottom: 5vh;
+    border-bottom: 1px solid #ada9a9;
+    display: flex;
+ }
+
+
+ .pl{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vmax;
+    width: 30%;
+    padding-left: 2vmax;
+    padding-top: 3vh;
+    padding-top: 4vh;
+ }
+
+.pr{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 2vmax;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 1vmax;
+   padding-left: 4vmax;
+   padding-top: 2vh;
+}
+form h6{
+    font-family: roobert;
+    font-size: 1.2vmax;
+    margin-left: 2vmax;
+    margin-top: 2vmax;
+}
+
+.form-check{
+    display: flex;
+    align-items: center;
+}
+.form-check input{
+    border: 1px solid #111 !important;
+}
+
+.divv{
+    display: flex;
+    align-items: center;
+    gap: 1vmax;
+    padding-top: 1vh;
+}
+.pr p{
+    font-family: roobert;
+    font-size: .8vmax;
+    color: #333;
+    font-weight: 550;
+}
+
+.yd{
+    width: 80%;
+    margin: auto;
+}
+.yd .heads{
+    display:flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 6vh;
+    border: 1px solid #ada9a9;
+    padding: 0 2vmax;
+}
+.yd .heads>h6{
+    font-family: roobert;
+    font-size: 1.2vmax;
+    margin: initial;
+}
+.yd .heads>i{
+    font-family: roobert;
+    font-size: 1.5vmax;
+    margin: initial;
+}
+
+.yd .btm{
+    display: flex;
+    padding-top: 5vh;
+    border: 1px solid #ada9a9;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+    display: none;
+}
+
+.lbtm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:1.2vmax;
+    width: 30%;
+    padding-left: 2vmax;
+}
+.rbtm{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:.3vmax;
+}
+.rbtm input{
+    width: 30vw;
+    background-color: #d3d6d9;
+    background-color: #e6e8eb;
+    border: none;
+    outline: none;
+}
+#formFile{
+    display: none !important;
+}
+form button{
+    width: 90%;
+    height: 7vh;
+    font-family: roobert;
+    font-weight: 500 !important;
+    letter-spacing: .5px !important;
+    background-color: #fcec52 !important;
+    background-color: #53adfe !important;
+    background-color: #111 !important;
+    color: #fff !important;
+    border: none !important;
+    margin: auto !important;
+    /* color: #111 !important; */
+    font-size: 1.2vmax !important;
+}
+.btnnn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 0;
+}
+textarea{
+    width: 30vw !important;
+    height: 30vh !important;
+    resize: none;
+    background-color: #e6e8eb !important;
+}

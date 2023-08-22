@@ -1,0 +1,56 @@
+ #brands{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:5vh;
+    padding-bottom: 5vh;
+ }
+ #contant small{
+   text-align: center;
+   font-family: roobert;
+   font-size: 1.4vmax;
+   font-weight: 550;
+   margin-bottom: 5vh;
+ }
+ #brd{
+   width: 80%;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2vmax;
+ }
+ #brd .bn_card{
+   width: 22%;
+   height: 35vh;
+   border-radius: 10px;
+   overflow: hidden;
+   background-color: #f2f2f2;
+ }
+ #brd .bn_card .imgb{
+   width: 100%;
+   height: 25vh;
+   overflow: hidden;
+ }
+ #brd .bn_card .imgb:hover img{
+   width: 105%;
+   height: 105%;
+ }
+ #brd .bn_card .txtb{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 10vh;
+ }
+ #brd .bn_card .txtb h6{
+   font-family: roobert;
+   font-weight: 550;
+   font-size: 1.3vmax;
+ }
+ #brd .bn_card .imgb img{
+   transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+   width: 100%;
+   height: 100%;object-fit:cover ;
+ }
+

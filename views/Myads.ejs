@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MY Adds</title>
+    <link rel="stylesheet" href="../stylesheets/boiler.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+  </head>
+  <body>
+    <style>
+        .cimg h5{
+            font-size: 10px !important;
+        }
+    </style>
+    <% include ./partials/search.ejs %>
+    <% include ./partials/nav.ejs %>
+    <div id="main">
+        <div id="profile">
+             <div id="prf">
+                <div id="lpr">
+                    <div onclick="window.location.href='/profile'" class="rows">
+                        <i class="ri-user-line"></i>
+                        <h6>My Profile</h6>
+                    </div>
+                    <div id="prof" onclick="window.location.href='/Myads'" class="rows">
+                        <i class="ri-megaphone-line"></i>
+                        <h6>My Ads</h6>
+                    </div>
+                    <div  onclick="window.location.href='/Myorders'" class="rows">
+                        <i class="ri-shopping-cart-2-line"></i>
+                        <h6>My Orders</h6>
+                    </div>
+                    <div  onclick="window.location.href='/Mysell'" class="rows">
+                        <i class="ri-user-line"></i>
+                        <h6>My Selling Orders</h6>
+                    </div>
+                    <div onclick="window.location.href='/wishlist'" class="rows">
+                        <i class="ri-heart-2-line"></i>
+                        <h6>Wishlist</h6>
+                    </div>
+                </div>
+                <div style="width: 90%;" id="lrr">
+                     <h1>Your Books for Selling</h1>
+                     <div class="card_container">
+                        <div id="cards">  
+                            <% if(user.books.length === 0){ %>
+                                <div id="no">
+                                     <img src="https://www.clankart.com/static-assets/storeclosed.png" alt="">
+                                     <small>You have no books listed to sell :(</small>
+                                     <p>Click here to sell yourused/new books for actual money</p>
+                                </div>
+                           <% }else{ %>
+                                <% user.books.forEach(function(card){ %>
+                                    <div class="cardM">
+                                        <div onclick="window.location.href='/mybook/<%= card._id %>'" class="cdiv">
+                                            <div class="cimg">
+                                                <img src="../images/uploads/bookimages/<%= card.pic[0] %>" alt="">
+                                            </div>
+                                            <h5><%= card.BookName %></h5>
+                                        </div>
+                                        <div class="ctxt">
+                                            <div onclick="window.location.href='/editad/<%= card._id %>'" style="width: 45%;background-color: #069adf;" id="pays">
+                                                <p>Edit Ad</p>
+                                                <!-- <i class="ri-checkbox-circle-fill"></i> -->
+                                            </div>
+                                            <div style="width: 45%;" onclick="window.location.href='/deleteadd/<%= card._id %>'" id="pays">
+                                                <p>Remove Ad</p>
+                                                <!-- <i class="ri-checkbox-circle-fill"></i> -->
+                                            </div>
+                                            
+                                        </div>
+    
+                                    </div>
+                                <% }) %>
+                           <% } %>
+                            
+                             <!-- <div class="cardM">
+                                 <div class="cimg"></div>
+                                 <div class="ctxt"></div>
+                             </div> -->
+                            
+                            
+                         </div>
+                     </div>
+                     
+                     
+                </div>
+             </div>
+             
+        </div>
+        <% include ./partials/footer.ejs %>
+    </div>
+    <% include ./partials/loco.ejs %>
+  </body>
+</html>

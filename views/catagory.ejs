@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New | books</title>
+    <link rel="stylesheet" href="../stylesheets/newbooks.css">
+</head>
+
+<body>
+    <% include ./partials/search.ejs %>
+    <% include ./partials/nav.ejs %>
+        <div id="main">
+            <div id="swiper">
+                <h1><%= decodedCategory %></h1>
+                <p>Buy Second Hand Books in great condition at low prices in India</p>
+            </div>
+            <div id="contant">
+                  
+                <div id="cnt">
+                    <% books.forEach(function(book){ %>
+                        <div class="Book_card">
+                            <div class="simg">
+                                <div class="heart">
+                                    <% if(user.wishlist.indexOf(book._id) === -1){ %>
+                                        <a style="text-decoration: none;color: #111;" href="/addwishlist/<%= book._id %>"><i class="ri-heart-2-line"></i></a>
+                                       <% }else{ %>
+                                        <a style="text-decoration: none;color: #f1416c;" href="/removewishlist/<%= book._id %>"><i class="ri-heart-2-fill"></i></a>
+                                        <% } %>
+                                </div>
+                                <div class="swiper2 mySwiper2">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="../images/uploads/bookimages/<%= book.pic[0] %>" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p><%= book.Des %></p>
+                                        </div>
+                                    </div>
+    
+                                    <div id="s3n" class="swiper-button-next">
+                                        <div class="right css-wjewkb"><svg viewBox="0 0 16 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" class="css-lzxyyg">
+                                                <path stroke="currentColor" d="M16 6H1" stroke-miterlimit="10"></path>
+                                                <path stroke="currentColor"
+                                                    d="M6 1c-.899 2.19-2.71 4.097-5 4.957v.086c2.29.86 4.101 2.766 5 4.957"
+                                                    stroke-miterlimit="10"></path>
+                                            </svg></div>
+    
+                                    </div>
+                                    <div id="s3p" class="swiper-button-prev">
+                                        <svg viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                            class="css-lzxyyg">
+                                            <path stroke="currentColor" d="M16 6H1" stroke-miterlimit="10"></path>
+                                            <path stroke="currentColor"
+                                                d="M6 1c-.899 2.19-2.71 4.097-5 4.957v.086c2.29.86 4.101 2.766 5 4.957"
+                                                stroke-miterlimit="10"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div onclick="window.location.href='/book/<%= book._id %>'" class="stxt">
+                                <h6><%= book.BookName %></h6>
+                                <h6>₹ <%= book.Price %>.00</h6>
+                               
+                                <div onclick="window.location.href='/book/<%= book._id %>'" class="bn">
+                                    <p>Buy Now</p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                   
+                  
+                </div>
+                <% include ./partials/option.ejs %>
+            </div>
+            <% include ./partials/footer.ejs %>
+        </div>
+        <% include ./partials/loco.ejs %>
+           
+            <script>
+                var swiper2 = new Swiper(".mySwiper2", {
+                    pagination: {
+                        el: ".swiper-pagination",
+                        type: "fraction",
+                    },
+                    navigation: {
+                        nextEl: "#s3n",
+                        prevEl: "#s3p",
+                    },
+                });
+            </script>
+</body>
+
+</html>

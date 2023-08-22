@@ -1,0 +1,140 @@
+
+#footer{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 67vh;
+    background-color: #ffffff;
+    padding-bottom: 10vh;
+}
+#footer .footer_one{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5vh;
+    /* padding: 0 10vmax; */
+}
+#footer .footer_one .links{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+#footer .footer_one a{
+    text-decoration: none;
+    font-family: Stabil Grotesk;
+    color: #7b757b;
+    font-size: 1vmax;
+    font-weight: 100 !important;
+    margin-bottom: .5vmax;
+}
+
+#footer .footer_one i{
+    font-size: 2vmax;
+    margin-right: .5vmax;
+
+}
+
+#footer .footer_one h5{
+    font-size: 1.1vmax;
+    text-decoration: none;
+    font-family: Stabil Grotesk;
+    color: #a5adc5;
+    color: #111;
+    font-weight: 100 !important;
+    margin-bottom: 1vmax;
+}
+#footer  .fac{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+}
+#footer  .fac .f{
+    display: flex;
+    align-items: flex-start;
+    gap: 1vmax;
+}
+#footer  .fac .f i{
+    font-size: 2vmax;
+}
+
+#footer  .fac .f h5{
+    font-family: Stabil Grotesk;
+    font-size: 1.2vmax;
+    font-weight: 500;
+    margin-bottom: .3vmax;
+}
+
+
+#footer  .fac .f small{
+    font-family: Stabil Grotesk;
+    font-size: .9vmax;
+    font-weight: 500;
+    color: #686e7b;
+}
+
+#footer .end{
+    width: 85%;
+    padding: 1vmax 0;
+}
+#footer .end p{
+    text-align: left;
+    font-family: Stabil Grotesk;
+    color: #111;
+    font-size: 1vmax;
+}
+
+
+#community{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vh;
+     width: 100%;
+     background-color: #f1faff;
+ }
+ #community h1{
+     text-align: center;
+     font-family: Stabil Grotesk;
+     font-size: 2.5vmax;
+     font-weight: 500;
+     color: #555555;
+ }
+
+
+#community p{
+    font-family: Stabil Grotesk;
+    margin-top: 2vmax;
+    font-size: 1vmax;
+    width: 63%;
+    text-align: center;
+    color: #555;
+}
+
+.ck-gradient-text {
+    background: linear-gradient(to right,#ce1212 0,#6218ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#community #img_div{
+    width: 100%;
+    height: 40vh;
+    display:flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+#cumminity #img_div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

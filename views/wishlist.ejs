@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MY Adds</title>
+    <link rel="stylesheet" href="../stylesheets/boiler.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+  </head>
+  <body>
+    <% include ./partials/nav.ejs %>
+    <div id="main">
+        <div id="profile">
+             <div id="prf">
+                <div id="lpr">
+                    <div onclick="window.location.href='/profile'" class="rows">
+                        <i class="ri-user-line"></i>
+                        <h6>My Profile</h6>
+                    </div>
+                    <div onclick="window.location.href='/Myads'" class="rows">
+                        <i class="ri-megaphone-line"></i>
+                        <h6>My Ads</h6>
+                    </div>
+                    <div onclick="window.location.href='/Myorders'" class="rows">
+                        <i class="ri-shopping-cart-2-line"></i>
+                        <h6>My Orders</h6>
+                    </div>
+                    <div onclick="window.location.href='/Mysell'" class="rows">
+                        <i class="ri-user-line"></i>
+                        <h6>My Selling Orders</h6>
+                    </div>
+                    <div onclick="window.location.href='/wishlist'" id="prof" class="rows">
+                        <i class="ri-heart-2-line"></i>
+                        <h6>Wishlist</h6>
+                    </div>
+                    
+                </div>
+                <div style="width: 90%;" id="lrr">
+                     <h1>Manage your wishlist</h1>
+                    <div class="card_container">
+                            <div id="cards">  
+                                <% if(user.wishlist.length === 0){ %>
+                                    <div id="no">
+                                        <img src="https://www.clankart.com/static-assets/emptywishlist.png" alt="">
+                                        <small>Sorry you have an empty wishlist :(</small>
+                                    </div>
+                            <% }else{ %>
+                                    <% user.wishlist.forEach(function(card){ %>
+                                        <div class="cardM">
+                                            <div class="cdiv">
+                                                <div class="cimg">
+                                                    <img src="../images/uploads/bookimages/<%= card.pic[0] %>" alt="">
+                                                </div>
+                                                <h5><%= card.BookName %></h5>
+                                            </div>
+                                            
+                                            <div class="ctxt">
+                                                <div onclick="window.location.href='/removewishlist/<%= card._id %>'" id="pays">
+                                                    <p>Remove</p>
+                                                    <!-- <i class="ri-checkbox-circle-fill"></i> -->
+                                                </div>
+                                                <div onclick="window.location.href='/addcart/<%= card._id %>'" style="width: 50%;background-color: #069adf;" id="pays">
+                                                    <p>Add to cart</p>
+                                                    <!-- <i class="ri-checkbox-circle-fill"></i> -->
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    <% }) %>
+                            <% } %>
+                                
+                                <!-- <div class="cardM">
+                                    <div class="cimg"></div>
+                                    <div class="ctxt"></div>
+                                </div> -->
+                                
+                                
+                            </div>
+                    </div>
+                     
+                     
+                </div>
+             </div>
+             
+        </div>
+        <% include ./partials/footer.ejs %>
+    </div>
+    <% include ./partials/loco.ejs %>
+  </body>
+</html>

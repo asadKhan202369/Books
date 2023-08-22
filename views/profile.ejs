@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../stylesheets/boiler.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+  </head>
+  <body>
+    <% include ./partials/nav.ejs %>
+    <div id="main">
+        <div id="profile">
+             <div id="prf">
+                <div id="lpr">
+                    <div id="prof" class="rows">
+                        <i class="ri-user-line"></i>
+                        <h6>My Profile</h6>
+                    </div>
+                    <div onclick="window.location.href='/Myads'" class="rows">
+                        <i class="ri-megaphone-line"></i>
+                        <h6>My Ads</h6>
+                    </div>
+                    <div onclick="window.location.href='/Myorders'" class="rows">
+                        <i class="ri-shopping-cart-2-line"></i>
+                        <h6>My Orders</h6>
+                    </div>
+                    <div onclick="window.location.href='/Mysell'" class="rows">
+                        <i class="ri-user-line"></i>
+                        <h6>My Selling Orders</h6>
+                    </div>
+                    <div onclick="window.location.href='/wishlist'" class="rows">
+                        <i class="ri-heart-2-line"></i>
+                        <h6>Wishlist</h6>
+                    </div>
+                    
+                </div>
+                <div id="lrr">
+                     <h1>Change your profile</h1>
+                     <div class="btm d-flex">
+                         <div class="lbtm">
+                               <p>Name</p>
+                               <p>Email Address</p>
+                               <p>Phone Number (WhatsApp <i class="ri-whatsapp-line"></i>)</p>
+                               <p>Pincode</p>
+                               <p>Address</p>
+                               <!-- <p>Change Password?</p> -->
+                         </div>
+                         <div class="rbtm">
+                            <form id="updateform" action="/update" method="post">
+                                <div class="d-flex px-5 gap-3 name">
+                                    <div class="mb-4">
+                                        <input value="<%= user.name %>" name="firstname" placeholder="First Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                      </div>
+                                      <div class="mb-3">
+                                          <input value="<%= user.lastname %>" name="lastname" placeholder="Last Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                      </div>
+                                </div>
+                                <div class="d-flex px-5 gap-5 email">
+                                    <div class="mb-4 d-flex gap-1" style="align-items: center;background-color: #dcdedf !important;padding-left: 10px;border-radius: 5px;">
+                                    <i style="color: #777f86;font-size: 1.5vmax;font-weight:500;" class="ri-mail-line"></i>
+                                        <input value="<%= user.email %>" name="email" placeholder="Email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                      </div>
+                                      
+                                </div>
+                                <div class="mb-4" style="padding-left: 3.15vmax;">
+                                    <!-- <input  placeholder="Phone number" type="tel" id="mobile" name="mobile" pattern="^(\+\d{1,3})?\d{1,10}$" required> -->
+                                    <input value="<%= user.contactnumber %>" name="Phonenumber" placeholder="Phone number" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-4" style="padding-left: 3.15vmax;">
+                                    <!-- <input  placeholder="Phone number" type="tel" id="mobile" name="mobile" pattern="^(\+\d{1,3})?\d{1,10}$" required> -->
+                                    <input value="<%= user.Zipcode %>" name="Pincode" placeholder="Pin code" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+
+                                <div class="mb-4" style="padding-left: 3.15vmax;">
+                                    <!-- <input  placeholder="Phone number" type="tel" id="mobile" name="mobile" pattern="^(\+\d{1,3})?\d{1,10}$" required> -->
+                                    <input value="<%= user.Address %>" name="Address" placeholder="Enter Address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                
+                               
+                                <small>We won't share your email/phone number with anyone. They will be kept private.</small>
+                                <div class="buttons">
+                                    <button onclick="window.location.href='/profile'" id="dis" class="btn btn-primary">Discard Changes</button>
+                                    <button id="chan" type="submit" class="btn btn-primary">Update Profile</button> 
+                                  </div>
+                              </form>
+                              
+                         </div>
+                     </div>
+                     
+                </div>
+             </div>
+             
+        </div>
+        <% include ./partials/footer.ejs %>
+    </div>
+    <% include ./partials/loco.ejs %>
+  </body>
+</html>

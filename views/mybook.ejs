@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/book.css">
+</head>
+
+<body>
+    <% include ./partials/search.ejs %>
+    <% include ./partials/nav.ejs %>
+        <div id="main">
+            <div id="books">
+                <div id="book">
+                    <div id="leftbook">
+                        <!-- #f1416c -->
+                        <div class="licn">
+                            
+                        </div>
+                        <div id="lswiper">
+                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                class="swiper mySwiper2">
+                                <div class="swiper-wrapper">
+                                    <% book.pic.forEach(function(pic){ %>
+                                        <div class="swiper-slide">
+                                            <div class="swimgsss">
+                                                <img src="../images/uploads/bookimages/<%= pic %>" />
+                                            </div>
+                                        </div>
+                                        <% }) %>
+
+
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <div thumbsSlider="" class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <% book.pic.forEach(function(pic1){ %>
+                                        <div class="swiper-slide">
+                                            <img src="../images/uploads/bookimages/<%= pic1 %>" />
+                                        </div>
+                                        <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rightbook">
+                        <h4>T.S. GREWAL'S CBSE volume 3</h4>
+                        <h6>₹<%= book.Price %>.00</h6>
+                        <% if (book.Shipping !==0 && !isNaN(book.Shipping)) { %>
+                            <p>Shipping Charge is ₹<%= book.Shipping %>.00 for this order!</p>
+                            <% } else { %>
+                                <p>Shipping is available from the seller!</p>
+
+                            <% } %>
+                                    
+                                    <div class="details">
+                                        <div class="ldetails">
+                                            <small>Condition</small>
+                                            <small>Subject/Title</small>
+                                            <small>Type</small>
+                                            <small>Category</small>
+                                            <small>Author</small>
+                                            <small>Year</small>
+                                        </div>
+                                        <div class="rdetails">
+                                            <small>
+                                                <%= book.BookCondition %>
+                                            </small>
+                                            <small>
+                                                <%= book.BookName %>
+                                            </small>
+                                            <% const
+                                                text="Reading Books (Novels,Children,Business,Literature,History,ec.)" ;
+                                                const startIndex=text.indexOf('('); const extractedText=startIndex !==-1
+                                                ? text.slice(0, startIndex).trim() : text; %>
+                                                <small>
+                                                    <%= extractedText %>
+                                                </small>
+                                                <small>
+                                                    <%= book.BookCatagory %>
+                                                </small>
+                                                <small>
+                                                    <%= book.author %>
+                                                </small>
+                                                <small>
+                                                    <%= book.edition %>
+                                                </small>
+                                        </div>
+                                    </div>
+                    </div>
+                </div>
+                <div id="des">
+                    <div class="ldes">
+                        <div class="div">
+                            <h6>Description</h6>
+                            <p>
+                                <%= book.Des %>
+                            </p>
+                        </div>
+                        <div class="div">
+                            <h6>Our Community</h6>
+                            <p>We're not just another shopping website where you buy from professional sellers - we are
+                                a vibrant community of students, book lovers across India who deliver happiness to each
+                                other!
+                            </p>
+                        </div>
+                        <% const currentTime=new Date(); %>
+                            <% const createdAt=book.createdAt %>
+                                <% const time=currentTime-createdAt %>
+                                    <% const timeDifferenceInHours=Math.floor(time / (1000 * 60 * 60)); %>
+                                        <% const timeDifferenceInDays=Math.floor(timeDifferenceInHours / 24); %>
+
+                                            <div class="add">
+                                                <small>Ad id :&nbsp;<%= book._id %></small>
+                                                <% if(timeDifferenceInDays>=24){ %>
+                                                    <small>Posted : <%= timeDifferenceInDays %> days ago</small>
+                                                    <% }else{ %>
+                                                        <small>Posted : <%= timeDifferenceInHours %> hours ago</small>
+                                                        <% } %>
+
+                                            </div>
+                    </div>
+                    <div class="rdes">
+                        <h6>Contact Details</h6>
+                        <div class="arow">
+                            <i class="ri-user-line"></i>
+                            <p>
+                                <%= book.ownerId.name %>
+                            </p>
+                        </div>
+                        <div class="arow">
+                            <i class="ri-map-pin-line"></i>
+                            <p>
+                                <%= book.ownerId.Address %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <% include ./partials/footer.ejs %>
+        </div>
+        <% include ./partials/loco.ejs %>
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    loop: true,
+                    grabCursor: true,
+                    spaceBetween: 10,
+                    slidesPerView: 3,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                });
+                var swiper2 = new Swiper(".mySwiper2", {
+                    grabCursor: true,
+                    loop: true,
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    thumbs: {
+                        swiper: swiper,
+                    },
+                });
+            </script>
+</body>
+
+</html>

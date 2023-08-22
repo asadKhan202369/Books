@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Renter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+</head>
+<style>
+    #main {
+        width: 100%;
+        background-color: #e6dcdc;
+    }
+
+    #nav {
+        background-color: #e6dcdc !important;
+        border-bottom: 2px solid #cec3c3 !important;
+    }
+
+    #nav {
+        background-color: teal;
+    }
+
+    #nav .menu_icon {
+        transform: translateY(0%) !important;
+    }
+
+    #nav .search {
+        border: 1px solid #000 !important;
+        transform: translateY(0%) !important;
+    }
+
+    #search {
+        color: #000 !important;
+        transform: translateY(0%) !important;
+    }
+#MENU{
+    color: #000 !important;
+}
+    #nav h6 {
+        color: #000 !important;
+    }
+
+  
+    #nav .menu_circle .line {
+        background-color: #000 !important;
+    }
+
+    .right_nav h6 {
+        transform: translateY(0%) !important;
+    }
+</style>
+
+<body>
+    <% include ./Partials/nav.ejs %>
+        <% include ./Partials/search.ejs %>
+            <div id="main">
+                <div class="vehicle_name">
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                    <h2>
+                        <%= vb %>
+                    </h2>
+                </div>
+                <div class="menu">
+                    <% data.forEach(function(v){ %>
+                        <% if(v.vehicleType==="car" ||v.vehicleType==="Car" ){ %>
+                            <div class="rsl">
+                                <div class="swiper_img">
+                                    <div class="swiper mySwiper">
+                                        <div class="swiper-wrapper">
+                                            <% v.pic.forEach(function(vimg){ %>
+                                                <div class="swiper-slide">
+                                                    <img src="../images/uploads/vehicleimages/<%= vimg %>" alt="">
+                                                </div>
+                                                <% }) %>
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                    </div>
+                                </div>
+
+                                <div class="content">
+                                    <div class="lmenu">
+                                        <div class="h6">
+                                            <h4>
+                                                <%= v.vehicleBrand %> &nbsp;<%= v.vehicleName %>
+                                            </h4>
+                                            <p>Model :<%= v.YOM.getFullYear() %>
+                                            </p>
+                                            <h6>
+                                                <span>₹ <%= v.RentalPrice %> /-</span> Day
+                                            </h6>
+                                        </div>
+                                        <div class="features">
+                                            <i class="ri-group-line"></i>
+                                            <i class="ri-wifi-line"></i>
+                                            <i class="ri-battery-low-line"></i>
+                                            <i class="ri-suitcase-line"></i>
+
+                                        </div>
+                                    </div>
+                                    <div class="rmenu">
+                                        <a href="/car/<%= v._id %>">
+                                            <div class="buy">
+                                                Explore More
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="button">
+                                        FOR RENT
+                                    </div>
+                                </div>
+
+                            </div>
+                            <% } %>
+
+                                <% }) %>
+                </div>
+                    <% include ./Partials/footer.ejs %>
+            </div>
+            <% include ./partials/loco.ejs %>
+                <script src="../javascripts/nav.js"></script>
+                <script src="../javascripts/search.js"></script>
+                <script>
+                    var swiper = new Swiper(".mySwiper", {
+                        pagination: {
+                            el: ".swiper-pagination",
+                            type: "progressbar",
+                        },
+                        loop: true,
+                        autoplay: {
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        },
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                    });
+                    const newImageSrc = '/images/uploads/Shery Ride-logos/Shery Ride-logos_black.png';
+          document.getElementById('logoimg').src = newImageSrc;
+                </script>
+                
+</body>
+
+</html>

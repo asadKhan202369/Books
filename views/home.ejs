@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="../stylesheets/home.css">
+   
+  </head>
+  <style>
+     #mf{
+        display: none;
+     }
+  </style>
+  <body>
+    <form id="mf" action="/uploadphotu" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Multiple
+                files input example</label>
+            <input id="pfile" name="filenames" class="form-control" type="file" id="formFileMultiple" multiple>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    
+        </form>
+    <% include ./partials/search.ejs %>
+    <% include ./partials/nav.ejs %>
+    <div id="main">
+        <div id="home">
+            <div class="text">
+                <h1>BÖ</h1>
+                <div class="divs">
+                    <div class="div">
+                        <p>Picture books</p>
+                        <div class="svg">
+                            <svg data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"
+                                class="symbol css-11p1b7x">
+                                <path fill="#FFFFFF"
+                                    d="m59.698 280.069 70-40 20 59.851 20-59.851 70 40-50-80.149L149.63.012 109.698 199.92l-50 80.149z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="div">
+                        <p>Fact books</p>
+                        <div class="svg">
+                            <svg data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"
+                                class="symbol css-11p1b7x">
+                                <path fill="#FFFFFF"
+                                    d="m59.698 280.069 70-40 20 59.851 20-59.851 70 40-50-80.149L149.63.012 109.698 199.92l-50 80.149z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="div">
+                        <p>Easy to read</p>
+                        <div class="svg">
+                            <svg data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"
+                                class="symbol css-11p1b7x">
+                                <path fill="#FFFFFF"
+                                    d="m59.698 280.069 70-40 20 59.851 20-59.851 70 40-50-80.149L149.63.012 109.698 199.92l-50 80.149z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="div">
+                        <p>Reference books</p>
+                        <div class="svg">
+                            <svg data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"
+                                class="symbol css-11p1b7x">
+                                <path fill="#FFFFFF"
+                                    d="m59.698 280.069 70-40 20 59.851 20-59.851 70 40-50-80.149L149.63.012 109.698 199.92l-50 80.149z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="div">
+                        <p>Puzzle books</p>
+                        <div class="svg">
+                            <svg data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"
+                                class="symbol css-11p1b7x">
+                                <path fill="#FFFFFF"
+                                    d="m59.698 280.069 70-40 20 59.851 20-59.851 70 40-50-80.149L149.63.012 109.698 199.92l-50 80.149z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+                <h1>CKER</h1>
+            </div>
+            <div class="bottom_line">
+                <div class="line"></div>
+            </div>
+        </div>
+        <div id="overlay">
+            <h1>Buy and Sell Old and New Books Online in India for Actual Money!</h1>
+            <h1>At Boocker you can buy second hand and new books and sell old books online at best prices. Selling used
+                books
+                online for cash made easy with Boocker!</h1>
+            <div class="options">
+                <div class="first_opt">
+                    <div onclick="window.location.href='/oldbooks'" class="first">
+                        <img src="https://www.clankart.com/static-assets/hand-books.svg" alt="">
+                        <h5>Buy Used Books</h5>
+                    </div>
+                    <div onclick="window.location.href='/post-ad'" class="first">
+                        <img src="https://www.clankart.com/static-assets/hand-money.svg" alt="">
+                        <h5>Sell Old Books</h5>
+                    </div>
+                    <div onclick="window.location.href='/newbooks'" class="first">
+                        <img src="https://www.clankart.com/static-assets/hand-books.svg" alt="">
+                        <h5>Buy New Books</h5>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div id="addd">
+            <div class="addcontain">
+                <h1>Have used, old books cluttering on your bookshelves?</h1>
+                <h4>Why not sell your old books and convert them into 'Real Money' into your account?</h4>
+                <div class="btn">
+                    <p>"Sell your used books, directly to a book lover just like you for actual money."</p>
+                    <h6 onclick="window.location.href='/post-ad'">Post Free Add Now</h6>
+                </div>
+            </div>
+        </div>
+        <div class="ha" id="steps">
+            <div class="head">
+                <h1>How to <span>SELL</span> your old books online on Boocker?</h1>
+                <p>Well, you can sell your old used books very easily on Clankart for actual cash.</p>
+                <h6>Earning money by selling your old books is just 3 steps away from you :)</h6>
+            </div>
+            <div class="bottom">'
+                <div class="card">
+                    <div class="top">
+                        <h5>Step 1</h5>
+                        <div class="img">
+                            <img src="https://www.clankart.com/static-assets/seller-adve.svg" alt="">
+                        </div>
+                        <h3>Post an ad for selling used books</h3>
+                    </div>
+                    <div class="bottom">
+                        <h2>Post an ad on Clankart describing your book details to sell your old books online.</h2>
+                    </div>
+                </div>
+                <img style="background-color:transparent;height: 10vh;padding: 0 1vmax;"
+                    src="https://www.clankart.com/static-assets/curved-arrow-up.svg" alt="">
+                <div class="card">
+                    <div class="top">
+                        <h5>Step 2</h5>
+                        <div class="img">
+                            <img src="https://www.clankart.com/static-assets/set-price.svg" alt="">
+                        </div>
+                        <h3>Set the selling price for your books</h3>
+                    </div>
+                    <div class="bottom">
+                        <h2>Set the price for your books at which you want to sell them.</h2>
+                    </div>
+                </div>
+                <img style="background-color:transparent;height: 15vh;padding: 0 1vmax;"
+                    src="https://www.clankart.com/static-assets/curved-arrow-down.svg" alt="">
+
+                <div class="card">
+                    <div class="top">
+                        <h5>Step 3</h5>
+                        <div class="img">
+                            <img src="https://www.clankart.com/static-assets/money-release.svg" alt="">
+                        </div>
+                        <h3>Get paid into your UPI/Bank account</h3>
+                    </div>
+                    <div class="bottom">
+                        <h2>You will get money into your account once you receive an order for your book.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hs" id="steps">
+            <div class="head">
+                <h1>How to <span>SELL</span> your old books online on Boocker?</h1>
+                <p>Well, you can sell your old used books very easily on Clankart for actual cash.</p>
+                <h6>Earning money by selling your old books is just 3 steps away from you :)</h6>
+            </div>
+            <div class="bottom">
+
+                <div class="card">
+                    <div class="top">
+                        <h5>Step 1</h5>
+                        <div class="img">
+                            <img src="https://www.clankart.com/static-assets/search-item.svg" alt="">
+                        </div>
+                        <h3>Select the used books you want</h3>
+                    </div>
+                    <div class="bottom">
+                        <h2>Search from over thousands of used books listed on Clankart.</h2>
+                    </div>
+                </div>
+                <img style="background-color:transparent;height: 10vh;padding: 0 1vmax;"
+                    src="https://www.clankart.com/static-assets/curved-arrow-up.svg" alt="">
+
+                <div class="card">
+                    <div class="top">
+                        <h5>Step 2</h5>
+                        <div class="img">
+                            <img src="https://www.clankart.com/static-assets/buy.svg" alt="">
+                        </div>
+                        <h3>Place the order by making payment to Clankart</h3>
+                    </div>
+                    <div class="bottom">
+                        <h2>Then simply place the order by clicking on 'Buy Now' button.</h2>
+                    </div>
+                </div>
+                <img style="background-color:transparent;height: 15vh;padding: 0 1vmax;"
+                    src="https://www.clankart.com/static-assets/curved-arrow-down.svg" alt="">
+                <div class="card">
+                    <div class="top">
+                        <h5>Step 3</h5>
+                        <div class="img">
+                            <img src="https://www.clankart.com/static-assets/seller-ships.svg" alt="">
+                        </div>
+                        <h3>Get the books delivered at your doorstep</h3>
+                    </div>
+                    <div class="bottom">
+                        <h2>The books will be delivered to you at your doorstep!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section2">
+            <h1>Boocker - Online Intercommunity Marketplace</h1>
+            <h2 style="margin-top: 10vh;">Are you a college going student and are upset with the increasing number of
+                used books after each new semester, or you are a regular book reader who after reading the books, keep
+                the old books on the bookshelves or in a cupboard and forget them? If yes, then Clankart is just made
+                for you!</h2>
+            <h2>Boocker is India's leading platform where you can sell used and new books online. At Boocker, we help
+                people to sell their used books to another book lover just like them at interesting prices.</h2>
+            <h2>Selling and buying books on Boocker is a win-win situation for both the buyer and the seller. How? Let's
+                see. As a seller, you can earn some good amount of money by selling your old books (which you don't even
+                need) to another person at good prices. And being a buyer, you can save some money by buying the second
+                hand books directly from the book owner.</h2>
+            <h6>"Selling used second hand books at your own desired price is not an uphill battle anymore. Just sell
+                them on Boocker6>
+        </div>
+        <div id="blogs">
+            <h1>Read from our <span>Blog</span></h1>
+            <div class="cards">
+                <div class="card_b">
+                    <div class="bimg">
+                        <img src="https://www.clankart.com/user-uploads/blog/Where_and_how_to_sell_old_books_online.webp"
+                            alt="">
+                    </div>
+                    <div class="btxt">
+                        <small>Where and how to sell old books online?</small>
+                        <p>On Boocker to sell used books online, all you just need is to follow these 3 steps and your
+                            used second hand book will be sold.
+
+                            - Create an account on Boocker.
+
+                            - Describe details and set the price at which you want to sell your books.
+
+                            - Get the money transferred into your account...</p>
+                    </div>
+                </div>  
+                <div class="card_b">
+                    <div class="bimg">
+                        <img src="https://www.clankart.com/user-uploads/blog/What_to_do_with_old_books.webp" alt="">
+                        
+                    </div>
+                    <div class="btxt">
+                        <small>What to do with old books?</small>
+                        <p>Now the question is what should a person do after reading new books?
+                            The answer is, resell used books to some another book lover just like you. By selling used books, you are trying to keep the book's motto alive and are helping to spread books knowledge ahead. If you like to do so, then you will definitely feel that how will I find the buyer for my book who will be ready to buy second hand books from you and where I can sell used books?...</p>
+                     
+                    </div>
+                </div>
+                <div class="card_b">
+                    <div class="bimg">
+                        <img src="https://www.clankart.com/user-uploads/blog/What_is_Clankart.webp" alt="">
+                        
+                    </div>
+                    <div class="btxt">
+                        <small>What is Boocker?</small>
+                        <p>Clankart is a platform on which anyone can sell used books, new books for money. All this can be done by simply posting a FREE ad on Clankart. So if you got some used books to sell, simply post the ad describing the details of your old book and set the price you want them to sell at. Boom! You are done...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <% include ./partials/footer.ejs %>
+        
+    </div>
+    <% include ./partials/loco.ejs %>
+  
+    <script>
+      
+    </script>
+    <script src="../javascripts/home.js"></script>
+  </body>
+</html>

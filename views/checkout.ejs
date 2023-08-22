@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="..//stylesheets/cart.css">
+</head>
+<body>
+    <script>
+        var data = '<%= user._id %>'
+        // console.log(JSON.stringify(data),"ts");
+   </script>
+    <% include ./partials/search.ejs %>
+    <% include ./partials/nav.ejs %>
+    <div class="form_card">
+         <div class="head">
+           <h1>Delivery Address</h1>
+           <i id="close_card" class="ri-close-fill"></i>
+         </div>
+             <div class="bottom"> 
+                <div class="left">
+                    <!-- <img src="https://img.freepik.com/premium-photo/sale-books_692498-3868.jpg?size=626&ext=jpg&uid=R84241536&ga=GA1.2.1072829414.1686638144&semt=ais" alt=""> -->
+                    <img src="https://img.freepik.com/free-photo/red-coffee-cup-book-reflective-glass_23-2147893296.jpg?size=626&ext=jpg&uid=R84241536&ga=GA1.2.1072829414.1686638144&semt=ais" alt="">
+                   <!-- <img src="https://img.freepik.com/free-photo/stack-books-black-wooden-table_93675-135417.jpg?size=626&ext=jpg&uid=R84241536&ga=GA1.2.1072829414.1686638144&semt=ais" alt=""> -->
+                   <!-- <img src="https://img.freepik.com/free-photo/colorful-books-stack-with-yellow-ribbon_23-2148882779.jpg?size=626&ext=jpg&uid=R84241536&ga=GA1.2.1072829414.1686638144&semt=ais" alt=""> -->
+                    <!-- <img src="https://img.freepik.com/premium-photo/stack-colorful-books-with-small-shopping-cart-isolated-white_392895-195209.jpg?size=626&ext=jpg&uid=R84241536&ga=GA1.2.1072829414.1686638144&semt=ais" alt=""> -->
+                    <!-- <img src="https://img.freepik.com/free-vector/mobile-shopping-e-commerce-isometric-composition-with-online-store-big-sale-event-tablet-screen_1284-26680.jpg?size=626&ext=jpg&uid=R84241536&ga=GA1.2.1072829414.1686638144&semt=ais" alt=""> -->
+                    <!-- <img src="https://www.clankart.com/static-assets/address-image.jpg" alt=""> -->
+                </div>
+                <div class="right">
+                   <form action="/updateadd/<%= order._id %>"  method="post">
+                       <h6 style="color: #1c90d0;">Enter New Address</h6>
+                       <div class="mb-3">
+                         <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                         <input name="fname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                       </div>
+                       <div class="mb-3">
+                           <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+                           <input name="mob" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                       </div>
+                       <div class="mb-3">
+                           <label for="exampleInputEmail1" class="form-label">Pin Code</label>
+                           <input name="pinc" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                       </div>
+                       <div class="mb-3">
+                           <label for="exampleInputEmail1" class="form-label">Locality</label>
+                           <input name="loc" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                       </div>
+                       <div class="mb-3">
+                           <label for="exampleInputEmail1" class="form-label">Complete Address</label>
+                               <textarea  name="Add" placeholder="Description of the vehicle" input type="text" name="desc" class="form-control" id="exampleInputPassword1"> </textarea>
+                       </div>
+                       <div class="opt">
+                            <h6>Adrees Type</h6>
+   
+                           <div class="check">
+                               <div class="form-check">
+                                   <label class="form-check-label" for="flexRadioDefault1">
+                                       Home
+                                    </label>
+                                   <input name="Addt" value="Home"  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                   
+                               </div>
+                               <div class="form-check">
+                                   <label class="form-check-label" for="flexRadioDefault1">
+                                       Office
+                                    </label>
+                                   <input  name="Addt" value="Office"  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                   
+                               </div>
+                               <div class="form-check">
+                                   <label class="form-check-label" for="flexRadioDefault1">
+                                       College/University
+                                    </label>
+                                   <input  name="Addt" value="College/University" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                   
+                               </div>
+                           </div>
+                       </div>
+                       <div class="mb-3">
+                           <label for="exampleInputEmail1" class="form-label">Landmark(optional)</label>
+                           <input name="Lmark" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                       </div>
+                       
+                       <div class="mb-3">
+                           <label for="exampleInputEmail1" class="form-label">Alternate Phone(optional)</label>
+                           <input name="aplhone" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                       </div>
+                       
+                       <button type="submit" class="btn btn-primary">DELIVER HERE</button>
+                     </form>
+                </div>
+             </div>
+    </div>
+    <div id="main">
+
+        <div id="cart_header">
+              <h1>My Cart (<%= user.carts.length %>)</h1>
+        </div>
+        <div id="cart_div">
+            <% if(user.carts.length === 0){ %>
+                <div id="no">
+                    <img src="https://www.clankart.com/static-assets/emptycart.png" alt="">
+                    <p>Sorry you have an empty cart :(</p>
+                    <h6 onclick="window.location.href='/allbooks'">Start buying now!</h6>
+                </div>
+           <% }else{ %>
+                <div id="cart_list">
+                    <div class="address">
+                        <div class="leftadd">
+                            <h5>Delivery Address</h5>
+                              <h6>Name:&nbsp; <%= order.fullName%> <span><%= order.AddressType %></span></h6>
+                              <h6>Address:&nbsp;<%= order.Address %></h6>
+                              <h6>Locality:&nbsp;<%= order.locality %>, <%= order.landmark %></h6>
+                              <h6>Pin:&nbsp;<%= order.pin %></h6>
+                              <h6>Contact:&nbsp;<%= order.contact %></h6>
+                        </div>
+                        <div class="rightadd">
+                             <h4 id="edit">CHANGE DELIVERY ADDRESS</h4>
+                        </div>
+                    </div>
+                    <% var cprice = 0; %>
+                    <% var sprice = 0; %>
+                    <% user.carts.forEach(function(cart){ %>
+                        
+                    <div id="cart_opt">
+                            <div id="cartleft">
+                            <div class="cimg">
+                                <img src="../images/uploads/bookimages/<%= cart.pic[0] %>" alt="">
+                            </div>
+                            <div class="ctxt">
+                                <h6><%= cart.Title %></h6>
+                                <p>Qty: 1</p>
+                                <small>Seller: <%= cart.ownerId.name %></small>
+                                <div class="tags">
+                                        <a href="/addwishlist/<%= cart._id %>">MOVE TO WISHLIST</a>
+                                        <a href="/removecart/<%= cart._id %>">REMOVE</a>
+                                </div>
+                            </div>
+                            </div>
+                            <div id="cartright">
+                            <div class="tt">
+                                    <h6>PRICE DETAILS</h6>
+                            </div>
+                            <div class="c">
+                                    <div class="cr">
+                                        <p>Price</p>
+                                        <% cprice+= cart.Price %>
+                                        <p>₹ <%= cart.Price %>.00</p>
+                                    </div>
+                                    
+                                    <div class="cr">
+                                    <p>Shipping Charges</p>
+                                    <% sprice+= cart.Shipping %>
+                                    <% if (cart.Shipping !==0 && !isNaN(cart.Shipping)) { %>
+                                        <% var ship =  cart.Shipping  %>
+                                            <p>₹ <%= ship %>.00</p>
+                                        <% } else { %>
+                                        <% var ship = 0;  %>
+                                            <p>₹ <%= ship %>.00</p>
+                                        <% } %>
+                                    </div>
+                                    <% var total = cart.Price + cart.Shipping %>
+                            </div>
+                            <div class="b">
+                                <p>Total</p>
+                                <p>₹ <%= total %>.00</p>
+                            </div>
+                            </div>
+                    </div>
+                    
+                <%  }) %>
+                                  
+                </div>
+                <div id="checkout">
+                    <div class="tp">
+                        <h6>TOTAL PRICE DETAILS</h6>
+                        <div class="rw">
+                            <div class="r">
+                            <p>Price (<%= user.carts.length %> items)</p>
+                            <p>₹ <%= cprice %>.00</p>
+                            </div>
+                            <div class="r">
+                            <p>Shipping Charges</p>
+                            <p>₹ <%= sprice %>.00</p>
+                            </div>
+                            <% var mtotal = cprice+sprice %>
+                            <div class="r">
+                            <p style="font-weight: 600;font-size: 1.3vmax;">Total Payable</p>
+                            <p  style="font-weight: 600;font-size: 1.3vmax;">₹ <%= mtotal %>.00</p>
+                            </div>
+                        </div>
+                        <small> Secure Payment: Your money is safe with us until you receive the item.</small>
+                    </div>
+                    <div class="bt">
+                        <div id="rzp-button1" class="btn">
+                            <small >PROCEED TO PAY ₹ <%= mtotal %></small>
+                        </div>
+                    </div>
+                </div>
+           <% } %>
+            
+        </div>
+     <% include ./partials/footer.ejs %>
+    </div>
+    <% include ./partials/loco.ejs %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+       <script>
+                //  const variableData = document.getElementById('total').textContent;
+                // body: JSON.stringify({ data: variableData }),
+            var orderId;
+            $(document).ready(function () {
+              var settings = {
+                "url": "/create/orderId",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                  "Content-Type": "application/json"
+                }
+              };
+        
+              //creates new orderId everytime
+              $.ajax(settings).done(function (response) {
+        
+                orderId = response.id;
+                console.log(orderId);
+                $("button").show();
+                var options = {
+                  "key": "rzp_test_e0p4ROsVzyQ7xL", // Enter the Key ID generated from the Dashboard
+                  "amount": response.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                  "currency": "INR",
+                  "name": "The_Tib_Bar_Guy",
+                  "description": "Test Transaction",
+                  "image": "https://thetibbarguy.com/cdn/shop/files/BlackLogo.png?v=1680796818&width=120",
+                  "order_id": response.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                  "handler": function (response) {
+                  
+        
+                    var settings = {
+                      "url": "/api/payment/verify",
+                      "method": "POST",
+                      "timeout": 0,
+                      "headers": {
+                        "Content-Type": "application/json"
+                      },
+                      "data": JSON.stringify({ response }),
+                    }
+                    $.ajax(settings).done(function (response) {
+                      if (response.signatureIsValid === 'true') {
+                        alert("your booking is successfull please check your mail for more details")
+                        // window.location.href = '/'
+                        // done();
+                      }
+                      else {
+                        alert("failed")
+                      }
+                    })
+        
+                  },
+                  "prefill": {
+                    "name": "Nitish kumar",
+                    "email": "nitishjsr@gmail.com",
+                    "contact": "8709141863"
+                  },
+                  "notes": {
+                    "address": "Razorpay Corporate Office"
+                  },
+                  "theme": {
+                    "color": "#3399cc"
+                  }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.on('payment.failed', function (response) {
+                  alert(response.error.code);
+                  alert(response.error.description);
+                  alert(response.error.source);
+                  alert(response.error.step);
+                  alert(response.error.reason);
+                  alert(response.error.metadata.order_id);
+                  alert(response.error.metadata.payment_id);
+                });
+                document.getElementById('rzp-button1').onclick = function (e) {
+                  rzp1.open();
+                  e.preventDefault();
+                }
+              });
+            });
+            function done() {
+                            fetch('/confirm/booking', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ key: 'value' })
+                            })
+                                .then(response => response.text())
+                                .catch(error => console.log(error));
+            }
+
+                     
+        
+          </script>
+
+
+<script>
+
+    var btn = document.querySelector("#edit")
+      .addEventListener("click",function(){
+          document.querySelector(".form_card").style.display="initial"                
+    })
+
+     document.querySelector("#close_card")
+      .addEventListener("click",function(){
+         
+            document.querySelector(".form_card").style.display="none"
+               flag = 0;                
+      })
+
+</script>
+
+</body>
+</html>

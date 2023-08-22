@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-ad</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/post-ad.css">
+</head>
+<body>
+    <% include ./partials/search.ejs %>
+    <% include ./partials/nav.ejs %>
+     <div id="main">
+         <div id="post">
+            <div class="head">
+                  <h1>Submit a free classified ad to <span>sell your used books for cash in India</span></h1>
+                  <a href="#">Click here to learn how does it work?</a>
+            </div>
+            <div id="frm">
+                <form action="/updatebook/<%= book._id %>" method="post">
+                    <h6>Book Details:</h6>
+                    <div style="display: flex;" class="book_detailss">
+                         <div class="lbd">
+                            <small>Ad Title</small>
+                            <small>Book Name</small>
+                         </div>
+                         <div class="lbr">
+                            <div class="mb-3 frow">
+                                <input value="<%= book.Title %>" style="background-color:#e6e8eb;border: none;" placeholder="Enter Your ad title" name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3 frow">
+                                <input value="<%= book.BookName %>" style="background-color:#e6e8eb;border: none;" placeholder="Enter Your Book Name" name="bookName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                         </div>
+                    </div>
+                    <div class="yd">
+                        <div class="heads">
+                             <h6>Optional Details:</h6>
+                             <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                        <div class="btm">
+                             <div class="lbtm">
+                                 <p>MRP</p>
+                                 <p>Author</p>
+                                 <p>Edition(Year)</p>
+                                 <p>Ad Description</p>
+                             </div>
+                             <div class="rbtm">
+                                 <div class="mb-3">
+                                     <input value="<%= book.mrp %>" name="mrp" placeholder="Enter MRP" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                 </div>
+                                 <div class="mb-3">
+                                     <input value="<%= book.author %>" name="author" placeholder="Enter Author Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                 </div>
+                                 <div class="mb-3">
+                                    <input value="<%= book.edition %>" name="edition" placeholder="Enter Edition" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                 <div class="mb-3">
+                                    <textarea placeholder="Enter Ad Description" name="Des" placeholder="Description of the vehicle" input type="text" name="desc" class="form-control" id="exampleInputPassword1"> </textarea>
+                                </div>  
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <h6 style="margin-bottom: initial !important;margin-bottom: 3vh !important;">Pricing Details:</h6>
+                    <div class="prising_details">
+                          <div class="pl">
+                            <small>Your Price (₹)</small>
+                            <small>Your shipping charges to <br> buyer</small>
+                          </div>
+
+                         <div class="pr">
+                            <div class="mb-3 frow">
+                                <input value="<%= book.Price %>" style="background-color:#e6e8eb;border: none;" placeholder="Enter Your ad Price" name="bookPrice" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3 frow" style="gap: 1vmax;">
+                                <input value="<%= book.Shipping %>" style="background-color:#e6e8eb;border: none;" placeholder="Enter Your Shipping charges for buyer" name="shipping" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                 or
+                                 <div class="form-check">
+                                   <input id="ch" name="shipping"  style="width: 1.5vw !important;height: 1.5vw;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                   <label style="white-space: nowrap;margin-left: .6vmax;margin-top: .2vmax;" class="form-check-label" for="flexCheckDefault">
+                                       Free Shipping
+                                   </label>
+                                 </div>
+                                 
+                            </div>
+                           
+                            <!-- <p>We'll ask you for your UPI Number details once you receive order for this book.</p> -->
+                         </div>
+                    </div>
+                    
+                   <div id="prfile" class="yd">
+                       <div class="heads">
+                            <h6>Your Details:</h6>
+                            <i class="ri-arrow-down-s-line"></i>
+                       </div>
+                       <div class="btm">
+                            <div class="lbtm">
+                                <p>Name</p>
+                                <p>Email Address</p>
+                                <p>Phone Number</p>
+                                <p>Pincode</p>
+                            </div>
+                            <div class="rbtm">
+                                <div class="mb-3">
+                                    <input value="<%= user.name %>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <input value="<%= user.email %>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <input placeholder="Enter Phone Number" value="<%= user.contactnumber %>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <input placeholder="Enter Pincode" value="<%= user.Zipcode %>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                           </div>
+                       </div>
+                       
+                   </div>
+                    <div class="btnnn">
+                        <button type="submit" class="btn btn-primary">Post Ad</button>
+                    </div>
+                </form>
+                
+            </div>
+         </div>
+         <% include ./partials/footer.ejs %>
+     </div>
+    <% include ./partials/loco.ejs %>
+    <script>
+        var flag = 0;
+         document.querySelector(".yd .heads")
+         .addEventListener("click",function(){
+            if(flag === 0){
+                document.querySelector(".yd .btm").style.display = "flex";
+                flag =1;
+            }else{
+                document.querySelector(".yd .btm").style.display = "none";
+                flag = 0;
+            }
+         })
+
+         var flag = 0;
+         document.querySelector("#prfile")
+         .addEventListener("click",function(){
+            if(flag === 0){
+                document.querySelector("#prfile .btm").style.display = "flex";
+                flag =1;
+            }else{
+                document.querySelector("#prfile .btm").style.display = "none";
+                flag = 0;
+            }
+         })
+
+         document.querySelector(".photo")
+         .addEventListener("click",function(){
+          document.querySelector("#formFile").click();
+         })
+
+</script>
+</body>
+</html>

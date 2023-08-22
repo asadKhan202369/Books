@@ -1,0 +1,106 @@
+#main{
+    width: 100%;
+    /* height: 100%; */
+    background-color: yellow;
+    cursor: pointer;
+    /* padding-top: 6vh; */
+}
+#signup_page{
+    width: 100%;
+    height: 100vh;
+    /* background-color: teal; */
+    background-image: url("https://www.bookswagon.com/images/css/login_bg.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    width: 35%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 5px;
+}
+#sign #top{
+    width: 100%;
+    height: 15vh;
+    /* margin-top: -5vh; */
+}
+#sign #top img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#sign h6{
+    font-size: 2vmax;
+    font-family: roobert;
+    text-align: center;
+    margin-top: 2vh;
+}
+form{
+    padding-top:3vh;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form input{
+    background-color: #f2f2f2 !important;
+    border: none;
+    outline: none;
+    margin-bottom: 1vh;
+    width: 27vw !important;
+    font-family: gilroy;
+    border-radius: 3px !important;
+}
+form button{
+    width: 77%;
+    border: 1px solid #d51912 !important;
+    color: #d51912 !important;
+    font-family: roobert;
+    font-weight: 600;
+    font-size: 1.2vmax !important;
+    /* letter-spacing: .5px; */
+    border-radius: 5px !important;
+    margin-top: 3vh;
+    background-color: transparent !important;
+}
+.button{
+    width: 77%;
+    background-color: #d51912 !important;
+    border: none !important;
+    outline: none !important;
+    color: #fff;
+    font-family: roobert !important;
+    font-size: 1.2vmax !important;
+    font-weight: 550 !important;
+    border-radius: 5px !important; 
+    margin-top: 2vh;
+}
+.google{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 0;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.google img{
+    height: 6vh;
+}
+#signup_page p{
+    font-family: roobert;
+    font-size: 1vmax;
+    color: #222;
+    font-weight: 570;
+}
+#signup_page p span{
+    color: #d51912;
+}

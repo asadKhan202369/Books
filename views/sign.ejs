@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="../stylesheets/sign.css">
+    <link rel="stylesheet" href="../stylesheets/boiler.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="main">
+         <div id="signup_page">
+             <div id="sign">
+                <div id="top">
+                     <img src="https://d2g9wbak88g7ch.cloudfront.net/staticimages/loginbanner.png" alt="">
+                </div>
+                <h6>Sign up</h6>
+                <form action="/forgot" method="post">
+                   
+                    <div class="mb-3">
+                        <input name="name" placeholder="Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1" class="form-label">Please Enter Name</label>
+                      </div>
+                      <div class="mb-3">
+                        <input name="email" placeholder="Enter Your Email...." type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1" class="form-label">Please Enter Email</label>
+                      </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                  <button type="submit" class="btn btn-primary button">Existing User?Log in</button>
+                 
+                <a  class="google" id="google_link" href="/login/federated/google">
+                    <img src="https://www.bookswagon.com/images/google.png" alt="">
+                </a>  
+                  <p>By continuing, I agree to the <span>Terms of Use</span> & <span>Privacy Policy</span></p>
+             </div>
+         </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>

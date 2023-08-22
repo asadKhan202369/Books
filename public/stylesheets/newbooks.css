@@ -1,0 +1,275 @@
+#main{
+    width: 100%;
+    padding: 0 2vmax;
+    /* margin-top: 10vh; */
+    background-color: #f9f8f3;
+}
+#swiper{
+    width: 100%;
+    height: 40vh;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    gap: 10vmax;
+    background-color: #f9f8f3;
+    border-bottom: 1px solid #111;
+}
+#swiper h1{
+    color: #000;
+    font-family: roobert;
+    font-weight: 600;
+    font-size: 5vmax;
+    letter-spacing: 1px;
+}
+#swiper p{
+    color: #222;
+    color: #000003;
+    font-family: roobert;
+    font-weight: 550;
+    font-size: 1.2vmax;
+}
+#nav{
+    background-color: #f9f8f3 !important;
+
+}
+
+#cnt{
+    width: 100%;
+    /* height: 50vh; */
+    border-radius: 10px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vmax;
+    /* padding-left: 5vw; */
+  }
+
+
+ .Book_card {
+    width: 20%;
+    text-align: center;
+    font-size: 18px;
+    /* background: #fff; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 0.125rem 0.125rem 0.3125rem 0 rgba(0,0,0,.08);
+    /* border-radius: 20px; */
+    overflow: hidden;
+    background-color: transparent !important;
+    margin-top: 3vmax;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-bottom: initial !important;
+
+  }
+
+  .Book_card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-fit: scale-down !important;
+  }
+  .Book_card .simg{
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    /* background-color: #eeede4; */
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+
+ 
+  .Book_card .stxt{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding:0 1vmax;
+    /* padding-right: 4vmax; */
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 4h;
+    /* height: 20vh; */
+    padding-top: 1vmax;
+    /* background-color: yellow; */
+    padding-right: initial;
+    overflow: hidden;
+    padding-bottom: initial !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .Book_card .stxt .div{
+     padding-top: 3vh;
+  }
+  .Book_card .stxt .div h6{
+    white-space: nowrap;
+  }
+
+  .Book_card .stxt h6{
+    width: 80%;
+    font-family: roobert;
+    font-size: 1.2vmax;
+    color: #111;
+    text-align: left;
+    font-weight: 550;
+  }
+  .Book_card .stxt small{
+    font-family: roobert;
+    font-size: 1.2vmax;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: .5px;
+    text-align: left;
+  }
+  .Book_card .stxt .bn{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    align-items: center;
+    justify-content: flex-end;
+    /* margin-bottom: -12px; */
+  }
+  .Book_card .stxt p{
+    font-family: roobert;
+    font-size: 1vmax;
+    font-weight: 500;
+    text-align: left;
+    padding: 0.5vmax 1.5vmax;
+    text-align: end !important;
+    background-color: #0083ca;
+    background-color: #222;
+    color: #fff;
+    /* border-radius: 3px; */
+    border-top-left-radius: 10px;
+    margin-bottom: initial !important;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+  .Book_card .stxt p:hover{
+    background-color: #444;
+  }
+
+  /* swiper2 */
+
+  .arrows{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* background-color: teal; */
+    width: 100%;
+    padding-top: 20vh !important;
+    height:20vh;
+  }
+  #s2p:after, #s2n:after {
+    display: none;
+  }
+  
+  #s2n svg, #s2p svg{
+    color: #111 !important;
+    /* height: 8vh !important; */
+  }
+  #s2n, #s2p{
+    position: absolute;
+     top: 70% !important;
+    transform: translate(-50%,-50%);
+  }
+  #s2n{
+    left: 50% !important;
+  }
+  #s2p{
+    left: 45% !important;
+  }
+  
+  .css-wjewkb.right {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+ }
+
+/* swiper3 */
+
+
+.swiper2 {
+    width: 100%;
+    height: 100%;
+  }
+
+ .swiper2 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
+    padding: 0 1vmax;
+    /* padding-left: 2vmax; */
+    background-color: #eeede4;
+   transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+
+ .swiper2 .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    /* object-fit: scale-down; */
+    border-radius: 10px !important;
+    border-radius: 10px;
+  }
+
+ .swiper2 .swiper-slide p{
+    font-family: roobert;
+    text-align: left;
+    font-size: 1.1vmax;
+ }
+  #s3p:after, #s3n:after {
+    display: none;
+  }
+  
+  #s3n svg, #s3p svg{
+    color: #111 !important;
+    /* height: 8vh !important; */
+  }
+  #s3n, #s3p{
+    position: absolute;
+     top: 100% !important;
+    transform: translate(-50%,-50%);
+  }
+  #s3n{
+    /* opacity: 0; */
+    left: 55% !important;
+  }
+  #s3p{
+    /* opacity: 0; */
+    left: 40% !important;
+  }
+
+
+  .swiper2 .swiper-slide:hover{
+    border-radius: 20px;
+  }
+
+
+  .swiper2 .swiper-slide:hover #s3n{
+    opacity: 1;
+  }
+
+
+  /* swiper3 */
+
+ .heart{
+  /* background-color: yellow; */
+  position: relative;
+  position: absolute;z-index: 9999;
+  top: 0%;
+  right: 3%;
+ }
+ .heart i{
+  font-size: 2vmax;
+ }

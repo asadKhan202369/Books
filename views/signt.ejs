@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Car renter</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/signt.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+  </head>
+  <body>
+    <style>
+        #nav .menu_icon{
+            transform: none;
+        }
+      
+        #nav .menu_circle{
+            transform: translateY(0%) !important;
+        }
+        #nav{
+         z-index: 999999999 !important;
+         margin-top: -2.5vmax;
+        }
+        #nav{
+            margin-bottom: 1vmax !important;
+        }
+    </style>
+    <div id="main">
+        <div id="left-panel">
+        
+            <div style="margin-top: 7vh;" id="sign-in-page">
+                <!-- <p>Welcome Champ!</p> -->
+                <h1>Register your account</h1>
+                <form id="land-form" action="/register" method="post">
+                    <h5>Name</h5>
+                    <input type="text" required="" name="name">
+                    <br>
+                    <h5>Email</h5>
+                    <input type="email" required="" name="email">
+                    <br>
+                    <h5>Contact No. (WhatsApp)</h5>
+                    <input type="text" required="" name="phoneNumber">
+                    <br>
+                    <h5>Password</h5>
+                    <input type="password" required="" name="password">
+                    <button type="submit">Sign Up</button>
+                </form>
+                <a href="/login">Account Already Exist?</a>
+                <div id="gitgoog">
+                  <a id="google_link" href="/login/federated/google"><i class="ri-google-fill"></i>Continue With Google</a>
+                </div>
+            </div>
+        </div>
+        <div id="right-panel">
+            <div id="right-panel-img"></div>
+        </div>
+    </div>
+    
+    <% include ./partials/loco.ejs %>
+    <script src="../javascripts/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+                const newImageSrc = '/images/uploads/Shery Ride-logos/Shery Ride-logos_black.png';
+          document.getElementById('logoimg').src = newImageSrc; 
+    </script>
+</body>
+  
+</html>

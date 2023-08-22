@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-ad</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/post-ad.css">
+</head>
+<body>
+    <% include ./partials/nav.ejs %>
+     <div id="main">
+         <div id="post">
+            <div class="head">
+                  <h1>Submit a free classified ad to <span>sell your used books for cash in India</span></h1>
+                  <a href="#">Click here to learn how does it work?</a>
+            </div>
+            <div id="frm">
+                <form action="/create/book" method="post" enctype="multipart/form-data">
+                    <h6>Book Details:</h6>
+                    <div style="display: flex;" class="book_detailss">
+                         <div class="lbd">
+                            <small>Ad Title</small>
+                            <small>Book Name</small>
+                            <small>Book Type</small>
+                            <small>Book Catagory</small>
+                            <small>Book Condition</small>
+                            <small>Upload Photos</small>
+                         </div>
+                         <div class="lbr">
+                            <div class="mb-3 frow">
+                                <input style="background-color:#e6e8eb;border: none;" placeholder="Enter Your ad title" name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3 frow">
+                                <input style="background-color:#e6e8eb;border: none;" placeholder="Enter Your Book Name" name="bookName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3 frow">
+                                  <select style="background-color:#e6e8eb;border: none;" name="bookType" class="form-select" aria-label="Default select example">
+                                    <option selected>Please Select book type</option>
+                                    <option value="College Books">College Books(Higher Education Textbooks)</option>
+                                    <option value="Exam/TestPreparetionBooks">Exam/Test Preparetion Books</option>
+                                    <option value="Reading Books">Reading Books (Novels,Children,Business,Literature,History,ec.)</option>
+                                    <option value="School Books">School Books (up to 12th)</option>
+                                  </select>
+                             </div>
+                             <div class="mb-3 frow">
+                                <select name="bookC" style="background-color:#e6e8eb;border: none;" name="bookType" class="form-select" aria-label="Default select example">
+                                  <option selected>Please Select book Catogory</option>
+                                  <option value="College Book">College Book</option>
+                                  <option value="Engineering Books">Engineering Books</option>
+                                  <option value="Exam Preparation">Exam Preparation</option>
+                                  <option value="School Books">School Books(up to 12th)</option>
+                                  <option value="UPSC Books">UPSC Books</option>
+                                  <option value="Mathemetics Book">Mathemetics Book</option>
+                                  <option value="CAT Books">CAT Books</option>
+                                  <option value="Reading Books">Reading Books</option>
+                                  <option value="Made Easy Book">Made Easy Book</option>
+                                  <option value="Reading Books">Reading Books</option>
+                                </select>
+                           </div>
+                             <div class="opt">
+                                <div class="form-check">
+                                    <input id="ch" value="New" name="bookCon"  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                      New
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input id="ch" name="bookCon" value=" Excellent" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                       Excellent
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input id="ch" value="Good" name="bookCon" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                       Good
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input id="ch" value="Fair" name="bookCon" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                       Fair
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="images" >
+                                 <div class="photo">
+                                    <i class="ri-camera-line"></i>
+                                    <a href="#">Click here to upload up to 5 images </a>
+                                 </div>
+                                 <input type="file" class="form-control" id="formFile" accept="image/*" name="vehiclephoto"  multiple>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="yd">
+                        <div class="heads">
+                             <h6>Optional Details:</h6>
+                             <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                        <div class="btm">
+                             <div class="lbtm">
+                                 <p>MRP</p>
+                                 <p> Author</p>
+                                 <p>Edition(Year)</p>
+                                 <p>Ad Description</p>
+                             </div>
+                             <div class="rbtm">
+                                 <div class="mb-3">
+                                     <input name="mrp" placeholder="Enter MRP" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                 </div>
+                                 <div class="mb-3">
+                                     <input name="author" placeholder="Enter Author Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                 </div>
+                                 <div class="mb-3">
+                                    <input name="edition" placeholder="Enter Edition" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                 <div class="mb-3">
+                                    <textarea placeholder="Enter Ad Description" name="Des" placeholder="Description of the vehicle" input type="text" name="desc" class="form-control" id="exampleInputPassword1"> </textarea>
+                                </div>  
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <h6 style="margin-bottom: initial !important;margin-bottom: 3vh !important;">Pricing Details:</h6>
+                    <div class="prising_details">
+                          <div class="pl">
+                            <small>Your Price (₹)</small>
+                            <small>Your shipping charges to <br> buyer</small>
+                            <small>Preferred Payment <br> Mode</small>
+                          </div>
+
+                         <div class="pr">
+                            <div class="mb-3 frow">
+                                <input style="background-color:#e6e8eb;border: none;" placeholder="Enter Your ad Price" name="bookPrice" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3 frow" style="gap: 1vmax;">
+                                <input style="background-color:#e6e8eb;border: none;" placeholder="Enter Your Shipping charges for buyer" name="shipping" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                 or
+                                 <div class="form-check">
+                                   <input id="ch" name="shipping"  style="width: 1.5vw !important;height: 1.5vw;" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                   <label style="white-space: nowrap;margin-left: .6vmax;margin-top: .2vmax;" class="form-check-label" for="flexCheckDefault">
+                                       Free Shipping
+                                   </label>
+                                 </div>
+                                 
+                            </div>
+                            <div class="mb-3 frow">
+                               <div class="div">
+                                   <small>After your book is sold, in what mode would you like to receive the payment?</small>
+                                   <div class="divv" style="display: flex;">
+                                       <div class="form-check">
+                                           <input id="ch" value="UPI Number" name="pay" style="width: 1vw !important;height: 1vw !important;" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                           <label class="form-check-label" for="flexRadioDefault1">
+                                              UPI Number
+                                           </label>
+                                         </div>
+                                         <div class="form-check">
+                                           <input id="ch" value="Bank Account" name="pay" style="width: 1vw !important;height: 1vw !important;" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                           <label class="form-check-label" for="flexRadioDefault1">
+                                              Bank Account
+                                           </label>
+                                         </div>
+                                                                               
+                                   </div>
+                                   <p>We'll ask you for your UPI Number details once you receive order for this book.</p>
+                               </div>
+                                
+                                 
+                            </div>
+                            <!-- <p>We'll ask you for your UPI Number details once you receive order for this book.</p> -->
+                         </div>
+                    </div>
+                    
+                   <div id="prfile" class="yd">
+                       <div class="heads">
+                            <h6>Your Details:</h6>
+                            <i class="ri-arrow-down-s-line"></i>
+                       </div>
+                       <div class="btm">
+                            <div class="lbtm">
+                                <p>Name</p>
+                                <p>Email Address</p>
+                                <p>Phone Number</p>
+                                <p>Pincode</p>
+                            </div>
+                            <div class="rbtm">
+                                <div class="mb-3">
+                                    <input value="<%= user.name %>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <input value="<%= user.email %>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <input placeholder="Enter Phone Number" value="<%= user.contactnumber %>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <input placeholder="Enter Pincode" value="<%= user.Zipcode %>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                           </div>
+                       </div>
+                       
+                   </div>
+                    <div class="btnnn">
+                        <button type="submit" class="btn btn-primary">Post Ad</button>
+                    </div>
+                </form>
+                
+            </div>
+         </div>
+         <% include ./partials/footer.ejs %>
+     </div>
+    <% include ./partials/loco.ejs %>
+    <script>
+        var flag = 0;
+         document.querySelector(".yd .heads")
+         .addEventListener("click",function(){
+            if(flag === 0){
+                document.querySelector(".yd .btm").style.display = "flex";
+                flag =1;
+            }else{
+                document.querySelector(".yd .btm").style.display = "none";
+                flag = 0;
+            }
+         })
+
+         var flag = 0;
+         document.querySelector("#prfile")
+         .addEventListener("click",function(){
+            if(flag === 0){
+                document.querySelector("#prfile .btm").style.display = "flex";
+                flag =1;
+            }else{
+                document.querySelector("#prfile .btm").style.display = "none";
+                flag = 0;
+            }
+         })
+
+         document.querySelector(".photo")
+         .addEventListener("click",function(){
+          document.querySelector("#formFile").click();
+         })
+
+</script>
+</body>
+</html>
